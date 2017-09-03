@@ -20,11 +20,8 @@ const config = {
             loader: "css-loader"
         }, {
             loader: "sass-loader"
-        }]
-      },
-      {
-        test: /\.css$/,
-        use: [ 'style-loader', 'css-loader' ]
+        }],
+        exclude: [/node_modules/]
       },
       {
         test: /\.pug$/,
@@ -42,7 +39,7 @@ const config = {
     path: path.resolve(__dirname, 'app'),
     filename: "bundle.[hash].js"
   },
-  devtool: PROD ? 'cheap-module-source-map' : 'cheap-module-eval-source-map',
+  devtool: 'cheap-module-eval-source-map',
   devServer: {
       port: 3000,
       contentBase:  path.resolve(__dirname, 'app')

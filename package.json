@@ -4,7 +4,7 @@
   "description": "Resume website for Cory Loeffelman",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --env=local --progress --inline --hot --colors",
     "build": "cross-env NODE_ENV=production webpack -p",
     "dev": "webpack-dev-server --content-base build --inline --hot",
     "kill": "taskkill /f /im node*"

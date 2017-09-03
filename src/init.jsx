@@ -6,12 +6,16 @@ import PropTypes from 'prop-types'
 
 import {ResumeApp} from './components/resumeApp/resumeApp'
 
+import resumeStore from './store/resumeStore'
+
 Provider.childContextTypes = {
   store: PropTypes.object,
   storeSubscription: PropTypes.func
 }
 
 ReactDOM.render(
-    <ResumeApp/>,
+    <Provider store={resumeStore}>
+      <ResumeApp/>
+    </Provider>,
   document.getElementById('root')
 )

@@ -1,0 +1,94 @@
+.header{
+  @import 'rails/rails.scss';
+
+  background: linear-gradient(to left, $blue, $blueMedium, $blueLight);
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+
+  &.showing-section{
+    .close{
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .rails{
+      right: calc(100% - 50px);
+      transform: translateX(100%);
+      width: 100px;
+
+      .rail:not(.selected){
+        opacity: 0;
+        width: 0px;
+      }
+    }
+
+    .profile-image{
+      box-shadow: 0px 0px 0px 10px $blueLight;
+      height: 100px;
+      left: 50px;
+      top: 50px;
+      transform: translateX(0%) translateY(0%);
+      width: 100px;
+    }
+  }
+
+  .close{
+    cursor: pointer;
+    height: 100px;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    transition: all 0.5s;
+    width: 100px;
+
+    &:before, &:after{
+      background-color: white;
+      content: '';
+      height: 30px;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      width: 1px;
+    }
+
+    &:before{
+      transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    }
+
+    &:after{
+      transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+    }
+  }
+
+  .profile-image{
+    background-color: rgba(white, 0.25);
+    background-image: url('https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-9/12369263_1125309870812990_3378202155710904510_n.jpg?oh=bac47776a56fe8d61a63756cf810a075&oe=5A608BCC');
+    background-position: center;
+    background-size: cover;
+    border-radius: 300px;
+    box-shadow: 0px 0px 0px 10px rgba(white, 0.15), 0px 0px 0px 20px rgba(white, 0.05);
+    height: 300px;
+    left: 150px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.5s;
+    width: 300px;
+    z-index: 2;
+
+    &:after{
+      box-shadow: inset 0px 0px 20px 4px rgba(black, 0.4);
+      border-radius: 300px;
+      content: '';
+      height: inherit;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      width: inherit;
+    }
+  }
+}

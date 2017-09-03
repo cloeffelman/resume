@@ -1,0 +1,20 @@
+@import 'colors.scss';
+
+html, body, #root{
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+
+  h1{
+    font-weight: 400;
+  }
+}
+
+#resume-app{
+  @import '../header/header.scss';
+
+  min-height: 100%;
+  width: 100%;
+}

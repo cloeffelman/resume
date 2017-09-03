@@ -1,0 +1,103 @@
+.rails{
+  height: 100%;
+  left: auto;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  transition: all 0.5s;
+  width: 400px;
+
+  .rail{
+    cursor: pointer;
+    display: inline-block;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    transition: all 0.5s;
+    width: 100px;
+
+    &:hover, &.selected{
+      .hover-highlight{
+        &:before, &:after{
+          height: calc(50% - 30px);
+        }
+      }
+
+      .title{
+        opacity: 1;
+      }
+
+      .icon{
+        opacity: 0;
+      }
+    }
+
+    .hover-highlight{
+      height: 100%;
+      pointer-events: none;
+      position: absolute;
+      width: 100%;
+      z-index: 2;
+
+      &:before, &:after{
+        background-color: rgba(white, 0.75);
+        content: '';
+        height: 0%;
+        left: 50%;
+        position: absolute;
+        transition: all 0.4s;
+        width: 1px;
+      }
+
+      &:before{
+        top: 10px;
+      }
+
+      &:after{
+        bottom: 10px;
+      }
+    }
+
+    .title, .icon{
+      backface-visibility: hidden;
+      color: white;
+      font-size: 1em;
+      left: 50%;
+      margin: 0px;
+      position: absolute;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      transition: all 0.4s;
+    }
+
+    .title{
+      font-size: 0.8em;
+      font-weight: 100;
+      opacity: 0;
+    }
+
+    .icon{
+      height: 30px;
+      line-height: 30px;
+      width: 30px;
+    }
+
+    &:before, &:after{
+      background-color: rgba(white, 0.25);
+      content: '';
+      height: calc(50% - 30px);
+      left: 50%;
+      position: absolute;
+      width: 1px;
+    }
+
+    &:before{
+      top: 10px;
+    }
+
+    &:after{
+      bottom: 10px;
+    }
+  }
+}
